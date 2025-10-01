@@ -1,0 +1,4 @@
+baseURL = 'https://vrhinow.github.io/'
+languageCode = 'en-us'
+title = 'vRhinow Blog'
+theme = 'blowfish'
