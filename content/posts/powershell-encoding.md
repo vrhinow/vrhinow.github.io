@@ -1,7 +1,7 @@
 +++
 date = '2025-10-01T19:43:19+02:00'
 draft = true
-title = 'My First Post'
+title = 'Powershell Encoding'
 +++
 
 I just started out with creating ansible modules with powershell code.
