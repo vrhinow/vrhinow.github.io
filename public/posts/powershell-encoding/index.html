@@ -140,7 +140,7 @@ The article however is regarding the creation of Modules inside of vscode.">
     
     
     "mainEntityOfPage": "true",
-    "wordCount": "366"
+    "wordCount": "359"
   }]
   </script>
 
@@ -577,18 +577,10 @@ The article however is regarding the creation of Modules inside of vscode.">
   <div class="flex flex-row flex-wrap items-center">
     
     
-      <time datetime="2025-10-01T19:43:19&#43;02:00">October 1, 2025</time><span class="px-2 text-primary-500">&middot;</span><span>366 words</span><span class="px-2 text-primary-500">&middot;</span><span title="Reading time">2 mins</span>
+      <time datetime="2025-10-01T19:43:19&#43;02:00">October 1, 2025</time><span class="px-2 text-primary-500">&middot;</span><span>359 words</span><span class="px-2 text-primary-500">&middot;</span><span title="Reading time">2 mins</span>
     
 
     
-    
-      <span class="ps-2"><span class="flex cursor-pointer">
-  <span
-    class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
-    Draft
-  </span>
-</span>
-</span>
     
   </div>
 
@@ -662,49 +654,94 @@ the traditional Powershell Module they are providing.</p>
 vscode.</p>
 <p>When i created my structure inside of vscode i encountered the following
 error:</p>
-<dl>
-<dt>{% highlight %} TASK [Create Machinecatalog]</dt>
-<dt>*****************************************************************************************************************************************************************************************************************************************************************************</dt>
-<dt>task path:</dt>
-<dt>/home/username/ansible/repository/playbooks/citrix/mvd-collection-test.yml:9</dt>
-<dt>Using module file</dt>
-<dt>/home/username/.ansible/collections/ansible_collections/collection/citrix/plugins/modules/mvd_machinecatalog_create.ps1</dt>
-<dt>Pipelining is enabled. &lt;hostname.corp.local&gt; ESTABLISH WINRM</dt>
-<dt>CONNECTION FOR USER: <a
-  href="mailto:mmvd@corp.local">mmvd@corp.local</a> on PORT 5986 TO hostname.corp.local</dt>
-<dt>EXEC (via pipeline wrapper) The full traceback is: The term</dt>
-<dt>‘#!powershell’ is not recognized as the name of a cmdlet, function,</dt>
-<dt>script file, or operable program. Check the spelling of the name, or if</dt>
-<dt>a path was included, verify that the path is correct and try again. At</dt>
-<dt>line:1 char:1 + #!powershell + ~~~~~~~~~~~~~ + CategoryInfo</dt>
-<dd>ObjectNotFound: (#!powershell:String) [],
-ParentContainsErrorRecordException + FullyQualifiedErrorId :
-CommandNotFoundException</dd>
-</dl>
-<p>ScriptStackTrace: at <!-- raw HTML omitted -->, <!-- raw HTML omitted -->: line 1 fatal: [localhost
--&gt; hostname.corp.local]: FAILED! =&gt; { “changed”: false, “msg”:
-“Unhandled exception while executing module: The term ‘#!powershell’ is
-not recognized as the name of a cmdlet, function, script file, or
-operable program. Check the spelling of the name, or if a path was
-included, verify that the path is correct and try again.” }</p>
-<p>PLAY RECAP
-***********************************************************************************************************************************************************************************************************************************************************************************************
-localhost : ok=0 changed=0 unreachable=0 failed=1 skipped=0 rescued=0
-ignored=0<br>
-{% endhighlight %}</p>
-<!-- raw HTML omitted -->
-<p>I tried to troubleshoot the isse but couldn‘t seem to figure it out. A
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#ae81ff">\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*</span>
+</span></span><span style="display:flex;"><span>task path:
+</span></span><span style="display:flex;"><span>/home/username/ansible/repository/playbooks/citrix/mvd-collection-test.yml:9
+</span></span><span style="display:flex;"><span>Using module file
+</span></span><span style="display:flex;"><span>/home/username/.ansible/collections/ansible_collections/collection/citrix/plugins/modules/mvd_machinecatalog_create.ps1
+</span></span><span style="display:flex;"><span>Pipelining is enabled. <span style="color:#ae81ff">\&lt;</span>hostname.corp.local<span style="color:#ae81ff">\&gt;</span> ESTABLISH WINRM
+</span></span><span style="display:flex;"><span>CONNECTION FOR USER: mmvd@corp.local on PORT <span style="color:#ae81ff">5986</span> TO hostname.corp.local
+</span></span><span style="display:flex;"><span>EXEC <span style="color:#f92672">(</span>via pipeline wrapper<span style="color:#f92672">)</span> The full traceback is: The term
+</span></span><span style="display:flex;"><span>‘<span style="color:#ae81ff">\#</span>!powershell’ is not recognized as the name of a cmdlet, <span style="color:#66d9ef">function</span>,
+</span></span><span style="display:flex;"><span>script file, or operable program. Check the spelling of the name, or <span style="color:#66d9ef">if</span>
+</span></span><span style="display:flex;"><span>a path was included, verify that the path is correct and try again. At
+</span></span><span style="display:flex;"><span>line:1 char:1 + <span style="color:#ae81ff">\#</span>!powershell + <span style="color:#ae81ff">\~\~\~\~\~\~\~\~\~\~\~\~</span>~ + CategoryInfo
+</span></span><span style="display:flex;"><span>: ObjectNotFound: <span style="color:#f92672">(</span><span style="color:#75715e">#!powershell:String) \[\],</span>
+</span></span><span style="display:flex;"><span>ParentContainsErrorRecordException + FullyQualifiedErrorId :
+</span></span><span style="display:flex;"><span>CommandNotFoundException
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>ScriptStackTrace: at &lt;ScriptBlock&gt;, &lt;No file&gt;: line <span style="color:#ae81ff">1</span> fatal: <span style="color:#ae81ff">\[</span>localhost
+</span></span><span style="display:flex;"><span>-<span style="color:#ae81ff">\&gt;</span> hostname.corp.local<span style="color:#ae81ff">\]</span>: FAILED! <span style="color:#f92672">=</span><span style="color:#ae81ff">\&gt;</span> <span style="color:#f92672">{</span> “changed”: false, “msg”:
+</span></span><span style="display:flex;"><span>“Unhandled exception <span style="color:#66d9ef">while</span> executing module: The term ‘<span style="color:#ae81ff">\#</span>!powershell’ is
+</span></span><span style="display:flex;"><span>not recognized as the name of a cmdlet, <span style="color:#66d9ef">function</span>, script file, or
+</span></span><span style="display:flex;"><span>operable program. Check the spelling of the name, or <span style="color:#66d9ef">if</span> a path was
+</span></span><span style="display:flex;"><span>included, verify that the path is correct and try again.” <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>PLAY RECAP
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*</span>
+</span></span><span style="display:flex;"><span>localhost : ok<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span> changed<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span> unreachable<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span> failed<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span> skipped<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span> rescued<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span>ignored<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>  
+</span></span></code></pre></div><p>I tried to troubleshoot the isse but couldn‘t seem to figure it out. A
 collegue of mine pointed out that the file encoding seems of.</p>
 <p>In the bottom right corner it‘s <strong>UTF8-BOM</strong>. This is an issue for linux
 systems but standard for Windows. This is an issue because the code will
 be base64ed before transferring to the target system. The UTF8-BOM
 messes up the characters and we get these types of issues.</p>
-<!-- raw HTML omitted -->
 <p>We can Click on the Encoding and Save the File in new Encoding and
 select „UTF8“ from the command palette which is standard for Linux
 systems.</p>
+<p>
+
+
+
+
+
+
+<figure>
+      <img
+    class="my-0 rounded-md"
+    loading="lazy"
+    decoding="async"
+    fetchpriority="low"
+    alt="VSCode Encoding"
+    srcset="
+      /powershell_encoding_vscode01_hu_facd5e247d739cc6.png  330w,
+      /powershell_encoding_vscode01_hu_7b01d3090d43b2c5.png  660w,
+      /powershell_encoding_vscode01_hu_2f2f5132dfeb8a2e.png 1280w
+    "
+    data-zoom-src="/powershell_encoding_vscode01.png"
+    src="/powershell_encoding_vscode01.png">
+
+  
+</figure>
+</p>
 <p>Afterwards i set the default for my VSCode to UTF8 via the
 Files.Encoding Setting.</p>
+<p>
+
+
+
+
+
+
+<figure>
+      <img
+    class="my-0 rounded-md"
+    loading="lazy"
+    decoding="async"
+    fetchpriority="low"
+    alt="VSCode Encoding Setting"
+    srcset="
+      /powershell_encoding_vscode02_hu_f41b1b1e29545c6.png  330w,
+      /powershell_encoding_vscode02_hu_68fdd0d96d8c7aa1.png  660w,
+      /powershell_encoding_vscode02_hu_ec5d2af745bc10d8.png 1280w
+    "
+    data-zoom-src="/powershell_encoding_vscode02.png"
+    src="/powershell_encoding_vscode02.png">
+
+  
+</figure>
+</p>
 
           
           

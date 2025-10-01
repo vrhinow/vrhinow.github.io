@@ -1,6 +1,6 @@
 +++
 date = '2025-10-01T19:43:19+02:00'
-draft = true
+draft = false
 title = 'Powershell Encoding'
 +++
 
@@ -18,8 +18,8 @@ vscode.
 When i created my structure inside of vscode i encountered the following
 error:
 
-{% highlight %} TASK \[Create Machinecatalog\]
-\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*
+``` bash TASK \[Create Machinecatalog\]
+\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*
 task path:
 /home/username/ansible/repository/playbooks/citrix/mvd-collection-test.yml:9
 Using module file
@@ -43,17 +43,11 @@ operable program. Check the spelling of the name, or if a path was
 included, verify that the path is correct and try again.” }
 
 PLAY RECAP
-\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*
+\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*
 localhost : ok=0 changed=0 unreachable=0 failed=1 skipped=0 rescued=0
 ignored=0  
-{% endhighlight %}
+```
 
-<figure>
-<img src="./d5fdfd1033f93b02d216fc1f70e2c5da.png"
-alt="d5fdfd1033f93b02d216fc1f70e2c5da.png" />
-<figcaption
-aria-hidden="true">d5fdfd1033f93b02d216fc1f70e2c5da.png</figcaption>
-</figure>
 
 I tried to troubleshoot the isse but couldn‘t seem to figure it out. A
 collegue of mine pointed out that the file encoding seems of.
@@ -63,16 +57,14 @@ systems but standard for Windows. This is an issue because the code will
 be base64ed before transferring to the target system. The UTF8-BOM
 messes up the characters and we get these types of issues.
 
-<figure>
-<img src="./0bba72f9f6d66422a60ba081af167e06.png"
-alt="0bba72f9f6d66422a60ba081af167e06.png" />
-<figcaption
-aria-hidden="true">0bba72f9f6d66422a60ba081af167e06.png</figcaption>
-</figure>
-
 We can Click on the Encoding and Save the File in new Encoding and
 select „UTF8“ from the command palette which is standard for Linux
 systems.
 
+![VSCode Encoding](powershell_encoding_vscode01.png)
+
+
 Afterwards i set the default for my VSCode to UTF8 via the
 Files.Encoding Setting.
+
+![VSCode Encoding Setting](powershell_encoding_vscode02.png)
