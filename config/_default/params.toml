@@ -2,7 +2,7 @@
 apiKey = "AIzaSyBOmuWPMG4zLWRzXqAlK0ajie1sVIL1gzM"
 authDomain = "vrhinow-blog.firebaseapp.com"
 projectId = "vrhinow-blog"
-storageBucket = "vrhinow-blog.firebasestorage.app"
+storageBucket = "vrhinow-blog.appspot.com"
 messagingSenderId = "54834288727"
 appId = "1:54834288727:web:0b1e9879d8d9b77b3eeb12"
 
