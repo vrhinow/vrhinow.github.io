@@ -1,4 +1,4 @@
-[firebaseConfig]
+[[firebaseConfig]]
 apiKey = "__firebaseApiKey__"
 authDomain = "vrhinow-blog.firebaseapp.com"
 projectId = "vrhinow-blog"
@@ -13,4 +13,4 @@ appId = "1:54834288727:web:0b1e9879d8d9b77b3eeb12"
 showLikes = true
 
 # Optionale Einstellung: Fügt die 'Views'-Funktionalität hinzu.
-# showViews = true 
+showViews = true 
