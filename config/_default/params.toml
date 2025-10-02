@@ -1,0 +1,16 @@
+[firebaseConfig]
+apiKey = "__firebaseApiKey__"
+authDomain = "vrhinow-blog.firebaseapp.com"
+projectId = "vrhinow-blog"
+storageBucket = "vrhinow-blog.firebasestorage.app"
+messagingSenderId = "54834288727"
+appId = "1:54834288727:web:0b1e9879d8d9b77b3eeb12"
+
+[article]
+# ... andere Artikel-Einstellungen
+
+# Fügt die 'Likes'-Funktionalität im gesamten Blog hinzu.
+showLikes = true
+
+# Optionale Einstellung: Fügt die 'Views'-Funktionalität hinzu.
+# showViews = true 
